@@ -24,9 +24,16 @@ public class StudentService
 		return "Student added successfully";
 	}
 
+
 	public Optional<Students> findbyid(Long id)
 	{
 		return studrepo.findById(id);
 	}
 	
+	public List<Students> getStudByDeptID(Integer id)
+	{
+		return studrepo.getStudByDeptId(id);
+	}
+
+
 }

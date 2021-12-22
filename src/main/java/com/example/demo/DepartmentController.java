@@ -35,11 +35,6 @@ public class DepartmentController
 	{
 		return deptservice.addDept(dept);
 	}
-	
-//	@GetMapping(path = "departments/{id}/students")
-//	public List<Students> getStudentByDepartment(@PathVariable("id") Integer id)
-//	{
-//		return deptservice.getStudentBytDepartment(id);
-//	}
+
 	
 }

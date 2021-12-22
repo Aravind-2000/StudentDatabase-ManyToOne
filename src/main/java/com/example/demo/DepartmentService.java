@@ -27,11 +27,4 @@ public class DepartmentService
 		deptrepo.save(dept);
 		return "Department added Successfully";
 	}
-
-//	public List<Students> getStudentBytDepartment(Integer id) 
-//	{
-//		return deptrepo.getStudByDept(id);
-//	}
-	
-
 }

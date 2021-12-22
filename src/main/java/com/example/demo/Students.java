@@ -1,27 +1,42 @@
 package com.example.demo;
 
-import java.util.*;
+
 import javax.persistence.Entity;
 import javax.persistence.*;
 
 @Entity
-public class Students 
+public class Students
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private String firstname;
+	
 	private String lastname;
-	
-	
-	private String departmentid;
-	
+
 	@ManyToOne
-	@JoinColumn(name="departmentid", updatable=false, insertable=false)
+	@JoinColumn(name="department_id", nullable = false)
 	private Department department;
 	
 	
 	
+	// No Args Constructor
+	public Students() {}
+	
+	//Argumented Constructor
+	public Students(
+			Long id,
+			String firstname,
+		 String lastname, Department department) {
+		super();
+		this.id = id;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.department=department;	
+	}
+
+
 	public Long getId() {
 		return id;
 	}
@@ -34,24 +49,16 @@ public class Students
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
-	public String getLastname() {
-		return lastname;
-	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-	public String getDepartmentid() {
-		return departmentid;
-	}
-	public void setDepartmentid(String departmentid) {
-		this.departmentid = departmentid;
-	}
 	public Department getDepartment() {
 		return department;
 	}
 	public void setDepartment(Department department) {
 		this.department = department;
 	}
-	
-	
+	public String getLastname() {
+		return lastname;
+	}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
 }
